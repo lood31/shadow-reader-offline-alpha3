@@ -1,0 +1,10 @@
+{
+  "version": "experimental-v2-conflict-guard",
+  "green": 80,
+  "yellow": 55,
+  "min_confidence": 0.7,
+  "min_coverage": 0.8,
+  "high_confidence": 0.8,
+  "severe_penalty": 0.25,
+  "max_alignment_gap": 0.5
+}

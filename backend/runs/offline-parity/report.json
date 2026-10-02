@@ -1,0 +1,42 @@
+{
+  "fp32": {
+    "passed": true,
+    "cases": 120,
+    "phones": 1731,
+    "gopMAE": 1.1323469113676896e-05,
+    "gopP95": 5.1975250244140625e-05,
+    "strongMarginSignAgreement": 1.0,
+    "maxBoundaryDriftFrames": 0,
+    "maxLogitsAbsoluteError": 0.0036869049072265625,
+    "shapeErrors": [],
+    "failures": [],
+    "rawLogitsAllcloseDiagnostics": [
+      "000050122",
+      "000560058",
+      "000700130"
+    ],
+    "logProbabilityAllcloseDiagnostics": [
+      "000560058"
+    ],
+    "maxPosteriorAbsoluteError": 0.0008375644683837891,
+    "fp32NumericalGate": "posterior allclose atol=1e-3 rtol=1e-3 AND GOP MAE<=1e-4 P95<=1e-3 AND strong-margin agreement=100% AND boundary drift<=1 frame; raw logits/logp retained"
+  },
+  "int8": {
+    "passed": true,
+    "cases": 120,
+    "phones": 1731,
+    "gopMAE": 0.0700219319215322,
+    "gopP95": 0.3174645707476884,
+    "strongMarginSignAgreement": 0.9946460440214159,
+    "maxBoundaryDriftFrames": 3,
+    "maxLogitsAbsoluteError": 14.452550888061523,
+    "shapeErrors": [],
+    "failures": [],
+    "rawLogitsAllcloseDiagnostics": [],
+    "logProbabilityAllcloseDiagnostics": [],
+    "maxPosteriorAbsoluteError": null,
+    "fp32NumericalGate": "posterior allclose atol=1e-3 rtol=1e-3 AND GOP MAE<=1e-4 P95<=1e-3 AND strong-margin agreement=100% AND boundary drift<=1 frame; raw logits/logp retained"
+  },
+  "status": "PASS",
+  "note": "Engineering parity only; not human pronunciation accuracy or Redmi K80 performance."
+}

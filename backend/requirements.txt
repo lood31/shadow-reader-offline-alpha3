@@ -1,0 +1,11 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+python-multipart==0.0.20
+numpy==2.2.6
+transformers==4.57.1
+phonemizer==3.3.0
+espeakng-loader==0.2.4; sys_platform == 'win32'
+silero-vad==6.2.0
+scikit-learn==1.7.2
+pytest==8.4.2
+httpx==0.28.1

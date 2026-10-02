@@ -1,0 +1,28 @@
+{
+  "modelId": "facebook/wav2vec2-lv-60-espeak-cv-ft",
+  "revision": "ae45363bf3413b374fecd9dc8bc1df0e24c3b7f4",
+  "sourceSha256": {
+    "pytorch_model.bin": "3173bde9e9ce490fa0f989e413c42f25bc1820c020adc1e6b9b87025b3cfcc5e",
+    "config.json": "4609fb49b7e1d28aecb2840da1926c40bd915bc6f1120a940afacf7159bbfb13",
+    "preprocessor_config.json": "a2254a5b58f72cd4de3632f8eee64f3f098b7c1402128d2f419e7d00ae13e335",
+    "tokenizer_config.json": "1273ec458332cc55226ec596904bae811420755ace7e5d69462b61c4f480b457",
+    "vocab.json": "d732ab2456c0c017930001dc9af0b41b3b93d25b2eb9740bf9d925508d7d87d0"
+  },
+  "opset": 17,
+  "onnx": "1.20.1",
+  "onnxruntime": "1.24.3",
+  "torch": "2.9.1+cpu",
+  "files": {
+    "model.fp32.onnx": {
+      "bytes": 1263786709,
+      "sha256": "1488414f033872c791891817789ba661d954575145ee6745bee48038e07b56fa"
+    },
+    "model.int8.onnx": {
+      "bytes": 356530647,
+      "sha256": "0d57f28fc159f07dc85a92645de31bcdf3fa708f471e8f12aceaa7d0b41810bc"
+    }
+  },
+  "quantization": "dynamic QInt8 per-channel constant RHS MatMul/Gemm only",
+  "validationStatus": "PASS",
+  "validationReportSha256": "418b8aacc0c924f4e3f105d14a7d1bf06177bc75992b06abf9a89ae6f8a8b2c2"
+}

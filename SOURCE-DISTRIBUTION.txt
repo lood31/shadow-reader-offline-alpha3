@@ -1,0 +1,6 @@
+Shadow Reader alpha3 private experimental distribution, GPL-3.0-or-later.
+Third-party sources and resources retain their respective licenses and copyrights.
+Complete application/native source and build scripts are supplied here.
+Restore verified model resources from the companion APK with scripts/restore-offline-assets.py.
+Tests and benchmark use synthetic fixtures; no user recordings are included.
+Debug signing key is excluded; use original workspace key to preserve upgrade signature.

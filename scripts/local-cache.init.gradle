@@ -1,0 +1,13 @@
+// Reuse the workspace's already downloaded official Maven artifacts.
+// This script is used only when .tools/maven-repo exists.
+settingsEvaluated { settings ->
+    settings.pluginManagement.repositories.clear()
+    settings.pluginManagement.repositories.maven { url = uri(new File(settings.settingsDir, '.tools/maven-repo')) }
+    settings.pluginManagement.repositories.google()
+    settings.pluginManagement.repositories.mavenCentral()
+    settings.pluginManagement.repositories.gradlePluginPortal()
+    settings.dependencyResolutionManagement.repositories.clear()
+    settings.dependencyResolutionManagement.repositories.maven { url = uri(new File(settings.settingsDir, '.tools/maven-repo')) }
+    settings.dependencyResolutionManagement.repositories.google()
+    settings.dependencyResolutionManagement.repositories.mavenCentral()
+}
