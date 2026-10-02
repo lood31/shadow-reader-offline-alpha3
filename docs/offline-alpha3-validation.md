@@ -4,7 +4,7 @@
 
 ## 使用
 
-安装 `artifacts/ShadowReader-2.0.0-alpha3-offline-debug.apk`，直接覆盖现有版本，保留原有文章、录音和训练数据。签名沿用工作区调试签名；实际升级保留数据仍待真机检查。安装包较大，建议至少预留 2GB 存储。第一次发音评估会流式解包和校验模型，初始化单独计时。
+从 GitHub Release 下载 `ShadowReader-2.0.0-alpha3-offline-debug.apk`，直接覆盖现有版本，保留原有文章、录音和训练数据。签名沿用工作区调试签名；实际升级保留数据仍待真机检查。安装包较大，建议至少预留 2GB 存储。第一次发音评估会流式解包和校验模型，初始化单独计时。
 
 发音反馈默认在手机运行，无需启动电脑后端。录音后先显示发音证据，再串行运行已有 Whisper 内容对比；Whisper 模型沿用原有安装流程，未安装时仍可获得本地发音反馈。点击单词可查看 IPA、颜色原因及回放自己的对应录音片段，时间是估计位置。
 
@@ -18,7 +18,7 @@
 - Python 证据与既有后端测试：22 通过；随机参考算法覆盖 2,520 次候选替换。
 - Android JVM：34 项，33 通过、1 项外部服务测试跳过，0 失败。包括固定合成声学夹具的 Kotlin/Python 对照、颜色门槛、低可靠性、重复路径、闪音、覆盖率和旧协议兼容。
 - 266 个唯一英语单词的桌面 C API 与现有 G2P 输出一致；Android 原生库成功编译。手机端 G2P 对照待运行。
-- Android 编译、lint、原生库构建通过。打包前检查 PASS 回执、报告哈希及所有资源 SHA256。包内资源、ARM64 ABI、16KB ELF/ZIP 对齐及签名结果见 `artifacts/alpha3-package-validation.json` 和签名日志。
+- Android 编译、lint、原生库构建通过。打包前检查 PASS 回执、报告哈希及所有资源 SHA256。包内资源、ARM64 ABI、16KB ELF/ZIP 对齐及签名结果见 `docs/alpha3-package-validation.json`；APK 使用和 alpha2 一致的证书签名。
 
 ## K80 验收：尚未进行
 
@@ -28,7 +28,7 @@
 .\scripts\benchmark-offline.ps1
 ```
 
-专用测试 APK 位于 `app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`。它不修改训练数据库。测试使用5秒合成谐波波形；10/15/30 秒使用重复合成波形和重复文本，属于工程压力测试，不能代替真实长录音。测试记录首次初始化、266 个公开语料词条的桌面 G2P 对照、连续20次5秒评估、长录音、取消后恢复与100ms间隔采样 PSS。结果输出到 `artifacts/offline-k80-benchmark.json`。只有 warm 5秒 P95≤10000ms、峰值 PSS≤2GiB 时引擎性能门槛通过；低频采样可能遗漏瞬时峰值。
+专用测试 APK 随 Release 附带，或在本地构建于 `app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`。它不修改训练数据库。测试使用5秒合成谐波波形；10/15/30 秒使用重复合成波形和重复文本，属于工程压力测试，不能代替真实长录音。测试记录首次初始化、266 个公开语料词条的桌面 G2P 对照、连续20次5秒评估、长录音、取消后恢复与100ms间隔采样 PSS。结果输出到 `artifacts/offline-k80-benchmark.json`。只有 warm 5秒 P95≤10000ms、峰值 PSS≤2GiB 时引擎性能门槛通过；低频采样可能遗漏瞬时峰值。
 
 仍需人工检查：覆盖 alpha2 安装后文章/历史/录音保留；真实5/10/15/30秒录音；连续使用的降速、崩溃及内存不足；录音途中切句、重录、退出；无网络逐词查看、回放与导出；损坏资源/空间不足时保留录音并可恢复。手机完成这些检查前，不能宣称真机验收通过或保证10秒延迟。
 

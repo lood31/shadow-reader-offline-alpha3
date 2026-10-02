@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "apkBytes": 418830429,
+  "apkSha256": "7c2aad2149c66a96f06cef59a759b2b46db9212bb4bed4644cd8cdab2142ac23",
+  "verifiedAssets": 375,
+  "nativeLibraries": [
+    {
+      "file": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "elfLoadAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zipOffset": 19611648
+    },
+    {
+      "file": "lib/arm64-v8a/libonnxruntime.so",
+      "elfLoadAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zipOffset": 19628032
+    },
+    {
+      "file": "lib/arm64-v8a/libonnxruntime4j_jni.so",
+      "elfLoadAlignments": [
+        16384,
+        16384
+      ],
+      "zipOffset": 45465600
+    },
+    {
+      "file": "lib/arm64-v8a/libshadow_phonemes.so",
+      "elfLoadAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zipOffset": 45563904
+    },
+    {
+      "file": "lib/arm64-v8a/libshadow_whisper.so",
+      "elfLoadAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zipOffset": 46350336
+    }
+  ],
+  "deviceAcceptance": "NOT_TESTED",
+  "signatureMatchesAlpha2": true,
+  "certificateSha256": "a8f6a859428433a978e57ba04588a800e723fc769d7f3bc34e3d1e43b5712891",
+  "androidUnitTests": {
+    "tests": 34,
+    "passed": 33,
+    "skipped": 1,
+    "failed": 0
+  },
+  "backendTests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 9
+  },
+  "databaseMigration": "PASS"
+}
