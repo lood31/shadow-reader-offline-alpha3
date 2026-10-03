@@ -1,0 +1,20 @@
+{
+  "status": "PASS_STATIC_ONLY",
+  "checks": [
+    "375 staged model/VAD/G2P/license files: size and SHA256",
+    "Python resource/project/build verification scripts parse",
+    "Xcode graph, targets, iOS 17 deployment and all Swift source references",
+    "Generated project parses as OpenStep plist",
+    "Info plists, microphone disclosure, matching App Groups, shared test scheme",
+    "Pinned dependency versions and native device/simulator build inputs",
+    "Unmodified acoustic/263-word G2P fixtures plus 3 same-version C API supplemental words",
+    "Swift grammar parses (21 files); this is not type-checking"
+  ],
+  "xctestCasesDelivered": 19,
+  "xctestExecuted": false,
+  "xcodeBuild": "NOT_RUN_NO_MAC",
+  "simulator": "NOT_RUN_NO_MAC",
+  "iphone": "NOT_RUN_NO_DEVICE",
+  "iosModelParity": "NOT_RUN",
+  "iosPerformance": "NOT_RUN"
+}

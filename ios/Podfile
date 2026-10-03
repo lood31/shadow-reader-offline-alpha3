@@ -1,0 +1,10 @@
+platform :ios, '17.0'
+project 'ShadowReader.xcodeproj'
+use_frameworks! :linkage => :static
+
+target 'ShadowReader' do
+  pod 'onnxruntime-c', '1.24.3'
+  target 'ShadowReaderTests' do
+    inherit! :search_paths
+  end
+end

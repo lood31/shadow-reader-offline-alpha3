@@ -1,0 +1,930 @@
+{
+  "archiveVersion": 1,
+  "classes": {},
+  "objectVersion": 56,
+  "objects": {
+    "DF91B146EA0DAEEACF023D7F": {
+      "isa": "PBXFileReference",
+      "path": "Native/SRNativeEngine.mm",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.cpp.objcpp"
+    },
+    "3A87A271FAB6093F4AEFDF6C": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Core/EvidenceScorer.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "131AF53A6E413F07C726B18D": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Core/Models.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "38DBF2C58FE28A95739C6019": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Core/Training.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "70DC00F2C3C761EBB973FF4B": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Data/ArticleImporter.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "9669C4BC6BB827D001999193": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Data/TrainingStore.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "B6ACEE1FCE4AF0416B76144D": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/ReaderController.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "FE49AD3CBBD5424E7180133F": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/AudioService.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "6BC1F106F20E8303FF974005": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/ExperimentExporter.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "8564563632549FE135311860": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/FileUtilities.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "7618B82ACE69CC5B502BECA3": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/LocalInference.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "29110B8B163FC8ACE9620B3D": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/SpeechService.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "C82E4DBA563E109E1E418E29": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/Services/WhisperModel.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "72C19F316A7946DA967C1CC8": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/UI/ReaderViews.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "77340A557AC32CBFF9CA4805": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/UI/SettingsAndReport.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "E950314D015AE51D09CA384B": {
+      "isa": "PBXFileReference",
+      "path": "ShadowReader/UI/ShadowReaderApp.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "CAD35054A8361FDDDDA0D4AB": {
+      "isa": "PBXFileReference",
+      "path": "ShareExtension/ShareViewController.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "042DB45CF79A36AE4CA483F6": {
+      "isa": "PBXFileReference",
+      "path": "Shared/ShareInbox.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "7FABE174E0F7A3305D2AB747": {
+      "isa": "PBXFileReference",
+      "path": "Tests/CoreTests.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "287BA0AE248AD2EAA8A2F86E": {
+      "isa": "PBXFileReference",
+      "path": "Tests/EvidenceTests.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "E858B0E396BB17F6CD6EE324": {
+      "isa": "PBXFileReference",
+      "path": "Tests/NativeRuntimeTests.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "004A621810711CD455434796": {
+      "isa": "PBXFileReference",
+      "path": "Tests/StoreTests.swift",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.swift"
+    },
+    "C54EF2DF42A247FE681FB737": {
+      "isa": "PBXFileReference",
+      "path": "Native/SRNativeEngine.h",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.c.h"
+    },
+    "620236A02C4751D2B22EA45A": {
+      "isa": "PBXFileReference",
+      "path": "Native/ShadowReader-Bridging-Header.h",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "sourcecode.c.h"
+    },
+    "7C0858417E8594228ED3CE0A": {
+      "isa": "PBXFileReference",
+      "path": "Config/App-Info.plist",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "text.plist.xml"
+    },
+    "A012228FB5F88FCDE31A0421": {
+      "isa": "PBXFileReference",
+      "path": "Config/Share-Info.plist",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "text.plist.xml"
+    },
+    "6B7C5F8432B968C375C9E6E7": {
+      "isa": "PBXFileReference",
+      "path": "Config/App.entitlements",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "text.plist.entitlements"
+    },
+    "DBFD44F37891D4577041399F": {
+      "isa": "PBXFileReference",
+      "path": "Config/Share.entitlements",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "text.plist.entitlements"
+    },
+    "902DD162642FE52251856804": {
+      "isa": "PBXFileReference",
+      "path": "Resources/pronunciation",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "folder"
+    },
+    "5EF22B6088D9ECC21AE0CBED": {
+      "isa": "PBXFileReference",
+      "path": "Resources/resource-receipt.json",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "text"
+    },
+    "92C27985E8EF37A9F99CFA9E": {
+      "isa": "PBXFileReference",
+      "path": "Tests/Fixtures",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "folder"
+    },
+    "AE34898059870429F376E980": {
+      "isa": "PBXFileReference",
+      "path": "Native/Vendor/ShadowNativeDependencies.xcframework",
+      "sourceTree": "SOURCE_ROOT",
+      "lastKnownFileType": "wrapper.xcframework"
+    },
+    "B25932056DBF990A3C149652": {
+      "isa": "PBXFileReference",
+      "path": "usr/lib/libsqlite3.tbd",
+      "sourceTree": "SDKROOT",
+      "lastKnownFileType": "sourcecode.text-based-dylib-definition"
+    },
+    "A0192EE29949D60A96122895": {
+      "isa": "PBXFileReference",
+      "path": "System/Library/Frameworks/Accelerate.framework",
+      "sourceTree": "SDKROOT",
+      "lastKnownFileType": "wrapper.framework"
+    },
+    "81F31879437340D5CD6ED968": {
+      "isa": "PBXFileReference",
+      "explicitFileType": "wrapper.application",
+      "path": "ShadowReader.app",
+      "sourceTree": "BUILT_PRODUCTS_DIR"
+    },
+    "8A7EF85CC49A09342FCD9B25": {
+      "isa": "PBXFileReference",
+      "explicitFileType": "wrapper.app-extension",
+      "path": "ShadowReaderShare.appex",
+      "sourceTree": "BUILT_PRODUCTS_DIR"
+    },
+    "70F09BF32F6D77A92FF191B4": {
+      "isa": "PBXFileReference",
+      "explicitFileType": "wrapper.cfbundle",
+      "path": "ShadowReaderTests.xctest",
+      "sourceTree": "BUILT_PRODUCTS_DIR"
+    },
+    "BA0292A7698FC629A18FCDD2": {
+      "isa": "XCRemoteSwiftPackageReference",
+      "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+      "requirement": {
+        "kind": "exactVersion",
+        "version": "2.6.0"
+      }
+    },
+    "B0F50597DAD91D95FC06F4CA": {
+      "isa": "XCSwiftPackageProductDependency",
+      "package": "BA0292A7698FC629A18FCDD2",
+      "productName": "SwiftSoup"
+    },
+    "3D0B4FA3133856BEF7BC643D": {
+      "isa": "XCRemoteSwiftPackageReference",
+      "repositoryURL": "https://github.com/weichsel/ZIPFoundation.git",
+      "requirement": {
+        "kind": "exactVersion",
+        "version": "0.9.19"
+      }
+    },
+    "708891216C35C07388834892": {
+      "isa": "XCSwiftPackageProductDependency",
+      "package": "3D0B4FA3133856BEF7BC643D",
+      "productName": "ZIPFoundation"
+    },
+    "31E77A51C56F2989A4D38BEA": {
+      "isa": "PBXBuildFile",
+      "fileRef": "3A87A271FAB6093F4AEFDF6C"
+    },
+    "7C142EB9EAC1CDEB07D47ED9": {
+      "isa": "PBXBuildFile",
+      "fileRef": "131AF53A6E413F07C726B18D"
+    },
+    "FB536EC4661F41D1160A310C": {
+      "isa": "PBXBuildFile",
+      "fileRef": "38DBF2C58FE28A95739C6019"
+    },
+    "0A2325410EE441995866C80E": {
+      "isa": "PBXBuildFile",
+      "fileRef": "70DC00F2C3C761EBB973FF4B"
+    },
+    "9044CFF5D4ECEA2764D24C1C": {
+      "isa": "PBXBuildFile",
+      "fileRef": "9669C4BC6BB827D001999193"
+    },
+    "A5D9C459E1008490285A4B6B": {
+      "isa": "PBXBuildFile",
+      "fileRef": "B6ACEE1FCE4AF0416B76144D"
+    },
+    "0850D201FA176719F47CD90C": {
+      "isa": "PBXBuildFile",
+      "fileRef": "FE49AD3CBBD5424E7180133F"
+    },
+    "48A53E5D6753728C56116613": {
+      "isa": "PBXBuildFile",
+      "fileRef": "6BC1F106F20E8303FF974005"
+    },
+    "7E2EF4E199FA9B71343F99F0": {
+      "isa": "PBXBuildFile",
+      "fileRef": "8564563632549FE135311860"
+    },
+    "D32B93F65FC3FA3C5E7BB523": {
+      "isa": "PBXBuildFile",
+      "fileRef": "7618B82ACE69CC5B502BECA3"
+    },
+    "B8DED3F9F604A05BA77E0BC9": {
+      "isa": "PBXBuildFile",
+      "fileRef": "29110B8B163FC8ACE9620B3D"
+    },
+    "1C2498AA5BA1EF759433311D": {
+      "isa": "PBXBuildFile",
+      "fileRef": "C82E4DBA563E109E1E418E29"
+    },
+    "5225522C6D20BD4B4118DDEC": {
+      "isa": "PBXBuildFile",
+      "fileRef": "72C19F316A7946DA967C1CC8"
+    },
+    "BF4A9F0D03D8A623C3F5D5A7": {
+      "isa": "PBXBuildFile",
+      "fileRef": "77340A557AC32CBFF9CA4805"
+    },
+    "16A1A23BAE123E7A31348446": {
+      "isa": "PBXBuildFile",
+      "fileRef": "E950314D015AE51D09CA384B"
+    },
+    "8CD3BBA45E8A47DD086B5E75": {
+      "isa": "PBXBuildFile",
+      "fileRef": "042DB45CF79A36AE4CA483F6"
+    },
+    "08FBBD3FD852CDF2408CD587": {
+      "isa": "PBXBuildFile",
+      "fileRef": "DF91B146EA0DAEEACF023D7F"
+    },
+    "6ACE7BC297BF23705D4E5F56": {
+      "isa": "PBXSourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "31E77A51C56F2989A4D38BEA",
+        "7C142EB9EAC1CDEB07D47ED9",
+        "FB536EC4661F41D1160A310C",
+        "0A2325410EE441995866C80E",
+        "9044CFF5D4ECEA2764D24C1C",
+        "A5D9C459E1008490285A4B6B",
+        "0850D201FA176719F47CD90C",
+        "48A53E5D6753728C56116613",
+        "7E2EF4E199FA9B71343F99F0",
+        "D32B93F65FC3FA3C5E7BB523",
+        "B8DED3F9F604A05BA77E0BC9",
+        "1C2498AA5BA1EF759433311D",
+        "5225522C6D20BD4B4118DDEC",
+        "BF4A9F0D03D8A623C3F5D5A7",
+        "16A1A23BAE123E7A31348446",
+        "8CD3BBA45E8A47DD086B5E75",
+        "08FBBD3FD852CDF2408CD587"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "A1114F24AB651B453E5B9711": {
+      "isa": "PBXBuildFile",
+      "fileRef": "902DD162642FE52251856804"
+    },
+    "450D4904621FB619824B9B4A": {
+      "isa": "PBXBuildFile",
+      "fileRef": "5EF22B6088D9ECC21AE0CBED"
+    },
+    "EB12F685944315C425ABFF58": {
+      "isa": "PBXResourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "A1114F24AB651B453E5B9711",
+        "450D4904621FB619824B9B4A"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "9E6CCC234BF25A96B904D826": {
+      "isa": "PBXBuildFile",
+      "fileRef": "AE34898059870429F376E980"
+    },
+    "72D1FEEF5764DE3C3FD9D097": {
+      "isa": "PBXBuildFile",
+      "fileRef": "B25932056DBF990A3C149652"
+    },
+    "8548C3C5C2844C9E1BAD82CA": {
+      "isa": "PBXBuildFile",
+      "fileRef": "A0192EE29949D60A96122895"
+    },
+    "591C4C5F7B544C052CD78BFC": {
+      "isa": "PBXBuildFile",
+      "productRef": "B0F50597DAD91D95FC06F4CA"
+    },
+    "F313F39D1731C26B72E98934": {
+      "isa": "PBXBuildFile",
+      "productRef": "708891216C35C07388834892"
+    },
+    "13D58F750C9F7A867F986420": {
+      "isa": "PBXFrameworksBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "9E6CCC234BF25A96B904D826",
+        "72D1FEEF5764DE3C3FD9D097",
+        "8548C3C5C2844C9E1BAD82CA",
+        "591C4C5F7B544C052CD78BFC",
+        "F313F39D1731C26B72E98934"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "822D7E8D9550CEE0950E1484": {
+      "isa": "PBXBuildFile",
+      "fileRef": "042DB45CF79A36AE4CA483F6"
+    },
+    "47FEE898C870271FB6FC2604": {
+      "isa": "PBXBuildFile",
+      "fileRef": "CAD35054A8361FDDDDA0D4AB"
+    },
+    "7B5679BCA1CFBFF5FB8F40AF": {
+      "isa": "PBXSourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "822D7E8D9550CEE0950E1484",
+        "47FEE898C870271FB6FC2604"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "0F2D0A97502A01AF2DEE82EA": {
+      "isa": "PBXResourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "307FBC0F054E01B8E256290B": {
+      "isa": "PBXFrameworksBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "0C127BB3F922B4DAEF771517": {
+      "isa": "PBXBuildFile",
+      "fileRef": "7FABE174E0F7A3305D2AB747"
+    },
+    "1618A4CFD99948F13107862D": {
+      "isa": "PBXBuildFile",
+      "fileRef": "287BA0AE248AD2EAA8A2F86E"
+    },
+    "398BA3EAEDA00036E19F4DB1": {
+      "isa": "PBXBuildFile",
+      "fileRef": "E858B0E396BB17F6CD6EE324"
+    },
+    "B9F6FE4470195BE949FCE995": {
+      "isa": "PBXBuildFile",
+      "fileRef": "004A621810711CD455434796"
+    },
+    "DE2F315977E833CC2ECF764D": {
+      "isa": "PBXSourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "0C127BB3F922B4DAEF771517",
+        "1618A4CFD99948F13107862D",
+        "398BA3EAEDA00036E19F4DB1",
+        "B9F6FE4470195BE949FCE995"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "0437ED9A63A8AA07DC6354B5": {
+      "isa": "PBXBuildFile",
+      "fileRef": "92C27985E8EF37A9F99CFA9E"
+    },
+    "41EB5A06123FA83769D9447E": {
+      "isa": "PBXResourcesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "0437ED9A63A8AA07DC6354B5"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "09701C1ED473FC02B8A57D80": {
+      "isa": "PBXFrameworksBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [],
+      "runOnlyForDeploymentPostprocessing": 0
+    },
+    "506673F9460CEC59922811D2": {
+      "isa": "PBXContainerItemProxy",
+      "containerPortal": "244210E48437B6556980A702",
+      "proxyType": 1,
+      "remoteGlobalIDString": "CE1C0C0A2D7FC4EFAFF3E018",
+      "remoteInfo": "ShadowReaderShare"
+    },
+    "FD06C34E1AB74EB4D1C73AE1": {
+      "isa": "PBXTargetDependency",
+      "target": "CE1C0C0A2D7FC4EFAFF3E018",
+      "targetProxy": "506673F9460CEC59922811D2"
+    },
+    "8619E39B688A33CB92F66F7B": {
+      "isa": "PBXContainerItemProxy",
+      "containerPortal": "244210E48437B6556980A702",
+      "proxyType": 1,
+      "remoteGlobalIDString": "8C1A045E96B998B40533C7FF",
+      "remoteInfo": "ShadowReader"
+    },
+    "79908C99F4A5E3188FC57C48": {
+      "isa": "PBXTargetDependency",
+      "target": "8C1A045E96B998B40533C7FF",
+      "targetProxy": "8619E39B688A33CB92F66F7B"
+    },
+    "A75365094ED2438AA1A5A25E": {
+      "isa": "PBXBuildFile",
+      "fileRef": "8A7EF85CC49A09342FCD9B25",
+      "settings": {
+        "ATTRIBUTES": [
+          "RemoveHeadersOnCopy"
+        ]
+      }
+    },
+    "BED4BFD851D3DA93673F1BB9": {
+      "isa": "PBXCopyFilesBuildPhase",
+      "buildActionMask": 2147483647,
+      "files": [
+        "A75365094ED2438AA1A5A25E"
+      ],
+      "runOnlyForDeploymentPostprocessing": 0,
+      "dstPath": "",
+      "dstSubfolderSpec": 13,
+      "name": "Embed App Extensions"
+    },
+    "0D9B6C467828201280D620A8": {
+      "isa": "XCBuildConfiguration",
+      "name": "Debug",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "NO",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReader",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios",
+        "INFOPLIST_FILE": "Config/App-Info.plist",
+        "CODE_SIGN_ENTITLEMENTS": "Config/App.entitlements",
+        "SWIFT_OBJC_BRIDGING_HEADER": "Native/ShadowReader-Bridging-Header.h",
+        "HEADER_SEARCH_PATHS": [
+          "$(inherited)",
+          "$(SRCROOT)/Native",
+          "$(SRCROOT)/Native/Vendor/ShadowNativeDependencies.xcframework/ios-arm64/Headers"
+        ],
+        "LD_RUNPATH_SEARCH_PATHS": [
+          "$(inherited)",
+          "@executable_path/Frameworks"
+        ],
+        "HEADER_SEARCH_PATHS[sdk=iphonesimulator*]": [
+          "$(inherited)",
+          "$(SRCROOT)/Native",
+          "$(SRCROOT)/Native/Vendor/ShadowNativeDependencies.xcframework/ios-arm64_x86_64-simulator/Headers"
+        ],
+        "SWIFT_OPTIMIZATION_LEVEL": "-Onone",
+        "ENABLE_TESTABILITY": "YES",
+        "DEBUG_INFORMATION_FORMAT": "dwarf",
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEBUG $(inherited)"
+      }
+    },
+    "E532E4CDC1E6865CE523475E": {
+      "isa": "XCBuildConfiguration",
+      "name": "Release",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "NO",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReader",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios",
+        "INFOPLIST_FILE": "Config/App-Info.plist",
+        "CODE_SIGN_ENTITLEMENTS": "Config/App.entitlements",
+        "SWIFT_OBJC_BRIDGING_HEADER": "Native/ShadowReader-Bridging-Header.h",
+        "HEADER_SEARCH_PATHS": [
+          "$(inherited)",
+          "$(SRCROOT)/Native",
+          "$(SRCROOT)/Native/Vendor/ShadowNativeDependencies.xcframework/ios-arm64/Headers"
+        ],
+        "LD_RUNPATH_SEARCH_PATHS": [
+          "$(inherited)",
+          "@executable_path/Frameworks"
+        ],
+        "HEADER_SEARCH_PATHS[sdk=iphonesimulator*]": [
+          "$(inherited)",
+          "$(SRCROOT)/Native",
+          "$(SRCROOT)/Native/Vendor/ShadowNativeDependencies.xcframework/ios-arm64_x86_64-simulator/Headers"
+        ],
+        "SWIFT_OPTIMIZATION_LEVEL": "-O"
+      }
+    },
+    "7FA7C6DD60DC323C7F3FA76C": {
+      "isa": "XCConfigurationList",
+      "buildConfigurations": [
+        "0D9B6C467828201280D620A8",
+        "E532E4CDC1E6865CE523475E"
+      ],
+      "defaultConfigurationIsVisible": 0,
+      "defaultConfigurationName": "Release"
+    },
+    "8C1A045E96B998B40533C7FF": {
+      "isa": "PBXNativeTarget",
+      "name": "ShadowReader",
+      "productName": "ShadowReader",
+      "productReference": "81F31879437340D5CD6ED968",
+      "productType": "com.apple.product-type.application",
+      "buildConfigurationList": "7FA7C6DD60DC323C7F3FA76C",
+      "buildPhases": [
+        "6ACE7BC297BF23705D4E5F56",
+        "13D58F750C9F7A867F986420",
+        "EB12F685944315C425ABFF58",
+        "BED4BFD851D3DA93673F1BB9"
+      ],
+      "dependencies": [
+        "FD06C34E1AB74EB4D1C73AE1"
+      ],
+      "buildRules": [],
+      "packageProductDependencies": [
+        "B0F50597DAD91D95FC06F4CA",
+        "708891216C35C07388834892"
+      ]
+    },
+    "DA36CD2863C76C1722F7C880": {
+      "isa": "XCBuildConfiguration",
+      "name": "Debug",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "NO",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReaderShare",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios.share",
+        "INFOPLIST_FILE": "Config/Share-Info.plist",
+        "CODE_SIGN_ENTITLEMENTS": "Config/Share.entitlements",
+        "APPLICATION_EXTENSION_API_ONLY": "YES",
+        "SKIP_INSTALL": "YES",
+        "LD_RUNPATH_SEARCH_PATHS": [
+          "$(inherited)",
+          "@executable_path/Frameworks",
+          "@executable_path/../../Frameworks"
+        ],
+        "SWIFT_OPTIMIZATION_LEVEL": "-Onone",
+        "ENABLE_TESTABILITY": "YES",
+        "DEBUG_INFORMATION_FORMAT": "dwarf",
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEBUG $(inherited)"
+      }
+    },
+    "6DF04CBAFEEE2A15FFB014ED": {
+      "isa": "XCBuildConfiguration",
+      "name": "Release",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "NO",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReaderShare",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios.share",
+        "INFOPLIST_FILE": "Config/Share-Info.plist",
+        "CODE_SIGN_ENTITLEMENTS": "Config/Share.entitlements",
+        "APPLICATION_EXTENSION_API_ONLY": "YES",
+        "SKIP_INSTALL": "YES",
+        "LD_RUNPATH_SEARCH_PATHS": [
+          "$(inherited)",
+          "@executable_path/Frameworks",
+          "@executable_path/../../Frameworks"
+        ],
+        "SWIFT_OPTIMIZATION_LEVEL": "-O"
+      }
+    },
+    "D11E45DE4DAC89C33D0D4D21": {
+      "isa": "XCConfigurationList",
+      "buildConfigurations": [
+        "DA36CD2863C76C1722F7C880",
+        "6DF04CBAFEEE2A15FFB014ED"
+      ],
+      "defaultConfigurationIsVisible": 0,
+      "defaultConfigurationName": "Release"
+    },
+    "CE1C0C0A2D7FC4EFAFF3E018": {
+      "isa": "PBXNativeTarget",
+      "name": "ShadowReaderShare",
+      "productName": "ShadowReaderShare",
+      "productReference": "8A7EF85CC49A09342FCD9B25",
+      "productType": "com.apple.product-type.app-extension",
+      "buildConfigurationList": "D11E45DE4DAC89C33D0D4D21",
+      "buildPhases": [
+        "7B5679BCA1CFBFF5FB8F40AF",
+        "307FBC0F054E01B8E256290B",
+        "0F2D0A97502A01AF2DEE82EA"
+      ],
+      "dependencies": [],
+      "buildRules": []
+    },
+    "2D78CCEA355AAA4DECA10BA5": {
+      "isa": "XCBuildConfiguration",
+      "name": "Debug",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "YES",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReaderTests",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios.tests",
+        "TEST_HOST": "$(BUILT_PRODUCTS_DIR)/ShadowReader.app/ShadowReader",
+        "BUNDLE_LOADER": "$(TEST_HOST)",
+        "SWIFT_OPTIMIZATION_LEVEL": "-Onone",
+        "ENABLE_TESTABILITY": "YES",
+        "DEBUG_INFORMATION_FORMAT": "dwarf",
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEBUG $(inherited)"
+      }
+    },
+    "F1D4FEDE61515AFDB9B202CA": {
+      "isa": "XCBuildConfiguration",
+      "name": "Release",
+      "buildSettings": {
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "TARGETED_DEVICE_FAMILY": "1,2",
+        "CODE_SIGN_STYLE": "Automatic",
+        "DEVELOPMENT_TEAM": "",
+        "SHADOW_APP_GROUP": "group.com.shadowreader.ios",
+        "CLANG_ENABLE_MODULES": "YES",
+        "CLANG_ENABLE_OBJC_ARC": "YES",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+        "GENERATE_INFOPLIST_FILE": "YES",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "2.0.0",
+        "PRODUCT_NAME": "ShadowReaderTests",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.shadowreader.ios.tests",
+        "TEST_HOST": "$(BUILT_PRODUCTS_DIR)/ShadowReader.app/ShadowReader",
+        "BUNDLE_LOADER": "$(TEST_HOST)",
+        "SWIFT_OPTIMIZATION_LEVEL": "-O"
+      }
+    },
+    "3AC24B37B5C6634D049790CE": {
+      "isa": "XCConfigurationList",
+      "buildConfigurations": [
+        "2D78CCEA355AAA4DECA10BA5",
+        "F1D4FEDE61515AFDB9B202CA"
+      ],
+      "defaultConfigurationIsVisible": 0,
+      "defaultConfigurationName": "Release"
+    },
+    "2ADDEE89B29C55E11126D89F": {
+      "isa": "PBXNativeTarget",
+      "name": "ShadowReaderTests",
+      "productName": "ShadowReaderTests",
+      "productReference": "70F09BF32F6D77A92FF191B4",
+      "productType": "com.apple.product-type.bundle.unit-test",
+      "buildConfigurationList": "3AC24B37B5C6634D049790CE",
+      "buildPhases": [
+        "DE2F315977E833CC2ECF764D",
+        "09701C1ED473FC02B8A57D80",
+        "41EB5A06123FA83769D9447E"
+      ],
+      "dependencies": [
+        "79908C99F4A5E3188FC57C48"
+      ],
+      "buildRules": []
+    },
+    "6F7199ED7B63CDA338A0FB82": {
+      "isa": "PBXGroup",
+      "name": "Products",
+      "sourceTree": "<group>",
+      "children": [
+        "81F31879437340D5CD6ED968",
+        "8A7EF85CC49A09342FCD9B25",
+        "70F09BF32F6D77A92FF191B4"
+      ]
+    },
+    "CC5D242D023A9271190EA7C6": {
+      "isa": "PBXGroup",
+      "sourceTree": "<group>",
+      "children": [
+        "DF91B146EA0DAEEACF023D7F",
+        "3A87A271FAB6093F4AEFDF6C",
+        "131AF53A6E413F07C726B18D",
+        "38DBF2C58FE28A95739C6019",
+        "70DC00F2C3C761EBB973FF4B",
+        "9669C4BC6BB827D001999193",
+        "B6ACEE1FCE4AF0416B76144D",
+        "FE49AD3CBBD5424E7180133F",
+        "6BC1F106F20E8303FF974005",
+        "8564563632549FE135311860",
+        "7618B82ACE69CC5B502BECA3",
+        "29110B8B163FC8ACE9620B3D",
+        "C82E4DBA563E109E1E418E29",
+        "72C19F316A7946DA967C1CC8",
+        "77340A557AC32CBFF9CA4805",
+        "E950314D015AE51D09CA384B",
+        "CAD35054A8361FDDDDA0D4AB",
+        "042DB45CF79A36AE4CA483F6",
+        "7FABE174E0F7A3305D2AB747",
+        "287BA0AE248AD2EAA8A2F86E",
+        "E858B0E396BB17F6CD6EE324",
+        "004A621810711CD455434796",
+        "C54EF2DF42A247FE681FB737",
+        "620236A02C4751D2B22EA45A",
+        "7C0858417E8594228ED3CE0A",
+        "A012228FB5F88FCDE31A0421",
+        "6B7C5F8432B968C375C9E6E7",
+        "DBFD44F37891D4577041399F",
+        "902DD162642FE52251856804",
+        "5EF22B6088D9ECC21AE0CBED",
+        "92C27985E8EF37A9F99CFA9E",
+        "AE34898059870429F376E980",
+        "B25932056DBF990A3C149652",
+        "A0192EE29949D60A96122895",
+        "6F7199ED7B63CDA338A0FB82"
+      ]
+    },
+    "184B519F8E1416CCE38CFFD7": {
+      "isa": "XCBuildConfiguration",
+      "name": "Debug",
+      "buildSettings": {
+        "CLANG_WARN_DOCUMENTATION_COMMENTS": "YES",
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "SWIFT_OPTIMIZATION_LEVEL": "-Onone",
+        "ENABLE_TESTABILITY": "YES",
+        "DEBUG_INFORMATION_FORMAT": "dwarf",
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEBUG $(inherited)"
+      }
+    },
+    "A824290273A346217D9BE6F4": {
+      "isa": "XCBuildConfiguration",
+      "name": "Release",
+      "buildSettings": {
+        "CLANG_WARN_DOCUMENTATION_COMMENTS": "YES",
+        "SWIFT_VERSION": "5.0",
+        "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
+        "SDKROOT": "iphoneos",
+        "SWIFT_OPTIMIZATION_LEVEL": "-O"
+      }
+    },
+    "1922B098E983995960BE56B0": {
+      "isa": "XCConfigurationList",
+      "buildConfigurations": [
+        "184B519F8E1416CCE38CFFD7",
+        "A824290273A346217D9BE6F4"
+      ],
+      "defaultConfigurationIsVisible": 0,
+      "defaultConfigurationName": "Release"
+    },
+    "244210E48437B6556980A702": {
+      "isa": "PBXProject",
+      "buildConfigurationList": "1922B098E983995960BE56B0",
+      "compatibilityVersion": "Xcode 14.0",
+      "developmentRegion": "en",
+      "knownRegions": [
+        "en",
+        "zh-Hans",
+        "Base"
+      ],
+      "mainGroup": "CC5D242D023A9271190EA7C6",
+      "productRefGroup": "6F7199ED7B63CDA338A0FB82",
+      "projectDirPath": "",
+      "projectRoot": "",
+      "targets": [
+        "8C1A045E96B998B40533C7FF",
+        "CE1C0C0A2D7FC4EFAFF3E018",
+        "2ADDEE89B29C55E11126D89F"
+      ],
+      "packageReferences": [
+        "BA0292A7698FC629A18FCDD2",
+        "3D0B4FA3133856BEF7BC643D"
+      ],
+      "attributes": {
+        "LastUpgradeCheck": "1600",
+        "BuildIndependentTargetsInParallel": "YES",
+        "TargetAttributes": {
+          "8C1A045E96B998B40533C7FF": {
+            "CreatedOnToolsVersion": "16.0"
+          },
+          "CE1C0C0A2D7FC4EFAFF3E018": {
+            "CreatedOnToolsVersion": "16.0"
+          },
+          "2ADDEE89B29C55E11126D89F": {
+            "CreatedOnToolsVersion": "16.0",
+            "TestTargetID": "8C1A045E96B998B40533C7FF"
+          }
+        }
+      }
+    }
+  },
+  "rootObject": "244210E48437B6556980A702"
+}

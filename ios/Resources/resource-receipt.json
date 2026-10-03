@@ -1,0 +1,9 @@
+{
+  "status": "STAGED_AND_HASH_VERIFIED",
+  "assetCount": 375,
+  "assetBytes": 377657194,
+  "manifestSha256": "284addb9cef058d4351a071edd2df2422a05ebb79a7332e2f776d0a206106104",
+  "validationReportSha256": "418b8aacc0c924f4e3f105d14a7d1bf06177bc75992b06abf9a89ae6f8a8b2c2",
+  "iosCompiled": false,
+  "iosInferenceVerified": false
+}

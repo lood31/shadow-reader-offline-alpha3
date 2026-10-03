@@ -1,0 +1,10 @@
+.build/
+.qa/
+Pods/
+Native/Vendor/
+Resources/pronunciation/
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.xcarchive
+!Podfile.lock

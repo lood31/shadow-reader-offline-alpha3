@@ -1,0 +1,10 @@
+{
+  "originalWords": 263,
+  "supplementWords": 3,
+  "totalWords": 266,
+  "generator": "eSpeak NG desktop C API",
+  "version": "1.52.0",
+  "voice": "en-us",
+  "phonemeMode": "IPA with underscore separator; stress removed",
+  "appleRuntimeVerified": false
+}
