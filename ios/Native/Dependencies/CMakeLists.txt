@@ -26,3 +26,4 @@ target_include_directories(espeak-include INTERFACE "${ESPEAK_ROOT}/src/include"
 add_subdirectory("${ESPEAK_ROOT}/src/ucd-tools" ucd)
 add_subdirectory("${ESPEAK_ROOT}/src/libespeak-ng" espeak)
 target_include_directories(espeak-ng BEFORE PRIVATE "${ESPEAK_ROOT}/src/include/compat")
+target_compile_options(espeak-ng PRIVATE "-include" "${CMAKE_CURRENT_LIST_DIR}/apple_endian.h")
