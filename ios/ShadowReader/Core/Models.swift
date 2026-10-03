@@ -79,7 +79,10 @@ struct WordAssessment: Codable, Identifiable {
     var id: Int { wordIndex }
     func range(in text: String) -> Range<String.Index>? {
         guard sourceStart >= 0, sourceEnd >= sourceStart, sourceEnd <= text.utf16.count else { return nil }
-        return Range(NSRange(location: sourceStart, length: sourceEnd - sourceStart), in: text)
+        let units = text.utf16
+        guard let start = String.Index(units.index(units.startIndex, offsetBy: sourceStart), within: text),
+              let end = String.Index(units.index(units.startIndex, offsetBy: sourceEnd), within: text) else { return nil }
+        return start..<end
     }
 }
 struct PronunciationAssessment: Codable {

@@ -60,6 +60,14 @@ final class CoreTests: XCTestCase {
         let invalid = WordAssessment(wordIndex: 0, text: "bad", sourceStart: 1, sourceEnd: 2, phonemes: [])
         XCTAssertNil(invalid.range(in: text))
     }
+    func testVocabularyPreservesCanonicallyEquivalentTokenIds() throws {
+        let data = Data("{\"<pad>\":0,\"u\\u0303\":1,\"\\u0169\":2}".utf8)
+        let vocab = try TokenVocabulary(data: data)
+        XCTAssertEqual(vocab.count, 3)
+        XCTAssertEqual(vocab["u\u{0303}"], 1)
+        XCTAssertEqual(vocab["\u{0169}"], 2)
+        XCTAssertEqual(vocab.phoneIds, [1, 2])
+    }
     func testTimingExcludesPauseAndPreparationAndGapUsesPlayedTime() {
         var now = 0.0; let clock = PlaybackTiming(now: { now })
         now = 5; clock.playing(true); now = 7; clock.playing(false); now = 10; clock.playing(true); now = 11

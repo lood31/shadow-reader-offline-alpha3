@@ -11,7 +11,7 @@
     "Unmodified acoustic/263-word G2P fixtures plus 3 same-version C API supplemental words",
     "Swift grammar parses (21 files); this is not type-checking"
   ],
-  "xctestCasesDelivered": 19,
+  "xctestCasesDelivered": 20,
   "xctestExecuted": false,
   "xcodeBuild": "NOT_RUN_NO_MAC",
   "simulator": "NOT_RUN_NO_MAC",

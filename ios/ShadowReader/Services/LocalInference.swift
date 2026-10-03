@@ -7,12 +7,32 @@ struct AssetManifest: Decodable {
     var files: [String: Spec]
 }
 /// DispatchQueue ownership spans physical native cleanup, including cancelled requests.
+struct TokenVocabulary {
+    private var ids = [Data: Int]()
+    var byId = [Int: String]()
+    var count: Int { byId.count }
+    subscript(_ token: String) -> Int? { ids[Data(token.utf8)] }
+    var phoneIds: [Int] { byId.filter { !$0.value.hasPrefix("<") && !["|", " "].contains($0.value) }.keys.sorted() }
+    init() {}
+    init(data: Data) throws {
+        guard let object = try JSONSerialization.jsonObject(with: data) as? NSDictionary else { throw ReaderError.message("模型词表无效。") }
+        // NSString preserves literal Unicode keys; Swift String equality would
+        // merge u + combining tilde (191) with precomposed u-tilde (374).
+        for (key, value) in object {
+            guard let token = key as? String, let number = value as? NSNumber else { throw ReaderError.message("模型词表无效。") }
+            let id = number.intValue
+            guard byId[id] == nil else { throw ReaderError.message("模型词表无效。") }
+            ids[Data(token.utf8)] = id; byId[id] = token
+        }
+        guard Set(byId.keys) == Set(0..<count), self["<pad>"] != nil else { throw ReaderError.message("模型词表无效。") }
+    }
+}
 final class LocalInference: PronunciationEngine, OfflineRecognizer, @unchecked Sendable {
     private let queue = DispatchQueue(label: "com.shadowreader.ios.inference", qos: .userInitiated)
     private let native = SRNativeEngine()
     private var manifest: AssetManifest?
     private var directory: URL?
-    private var vocab = [String: Int]()
+    private var vocab = TokenVocabulary()
     private var whisperVerified = false
     func assess(_ request: PronunciationRequest) async throws -> PronunciationAssessment {
         try await work(id: request.requestId) { flag in try self.calculate(request, flag: flag) }
@@ -67,8 +87,7 @@ final class LocalInference: PronunciationEngine, OfflineRecognizer, @unchecked S
                 guard file.path.hasPrefix(root.standardizedFileURL.path+"/"), try file.resourceValues(forKeys: [.fileSizeKey]).fileSize == spec.bytes,
                       try FileDigest.sha256(file: file, check: flag.check) == spec.sha256 else { throw ReaderError.message("离线资源校验失败：\(name)，录音已保留。") }
             }
-            let inventory = try JSONDecoder().decode([String: Int].self, from: Data(contentsOf: root.appendingPathComponent("vocab.json")))
-            guard Set(inventory.values) == Set(0..<inventory.count), inventory["<pad>"] != nil else { throw ReaderError.message("模型词表无效。") }
+            let inventory = try TokenVocabulary(data: Data(contentsOf: root.appendingPathComponent("vocab.json")))
             manifest = receipt; vocab = inventory; directory = root
         }
         try flag.check(); try native.loadPronunciation(at: directory!.path)
@@ -124,8 +143,8 @@ final class LocalInference: PronunciationEngine, OfflineRecognizer, @unchecked S
             }
             assessment.timingsMs["inference"] = (ProcessInfo.processInfo.systemUptime-inferenceStart)*1000
             let scoringStart = ProcessInfo.processInfo.systemUptime
-            let ids = vocab.filter { !$0.key.hasPrefix("<") && !["|", " "].contains($0.key) }.values.sorted()
-            let byId = Dictionary(uniqueKeysWithValues: vocab.map { ($0.value, $0.key) })
+            let ids = vocab.phoneIds
+            let byId = vocab.byId
             var scored: [EvidenceScorer.Phone]
             do { scored = try EvidenceScorer(logp: logits, targets: targets, blank: vocab["<pad>"]!, phoneIds: ids, checkCancelled: flag.check).assess(ipas: ipas, byId: byId) }
             catch ReaderError.message("ALIGNMENT_FAILED") { reason = "ALIGNMENT_FAILED"; scored = targets.map { _ in .unknown("ALIGNMENT_FAILED") } }
