@@ -38,24 +38,58 @@ import SwiftUI
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationStack { List {
-            Section("本次训练") { Text("练习 \(report.rows.count) 句 · \(report.attempts) 次录音或重分析"); Text("内容一致 \(report.count(.consistent)) · 待复习 \(report.count(.different)) · 跳过 \(report.count(.skipped)) · 未评估 / 争议 \(report.count(.unevaluated)+report.count(.disputed))") }
+            summarySection
             if report.rows.contains(where: { $0.final.mode == .pronunciation }) {
-                Section("发音声学证据") {
-                    Text("绿 \(report.pronunciationCounts[.green, default: 0]) · 黄 \(report.pronunciationCounts[.yellow, default: 0]) · 红 \(report.pronunciationCounts[.red, default: 0]) · 灰 \(report.pronunciationCounts[.unknown, default: 0])")
-                    Text("按各句本次最终结果统计；未获得发音结果的句子也会保留在明细中。颜色不表示发音正确概率。").font(.caption)
-                    let priorities = report.rows.flatMap { $0.final.pronunciation?.words ?? [] }.filter { $0.status == .red || $0.status == .yellow }.prefix(3)
-                    ForEach(Array(priorities.enumerated()), id: \.offset) { _, word in Text("重练：\(word.text) · \(word.status.label)").foregroundStyle(word.status.color) }
-                }
+                pronunciationSection
             }
-            Section("逐句结果") { ForEach(report.rows) { row in VStack(alignment: .leading, spacing: 6) {
-                Text(row.final.text)
-                Text("\(row.final.mode == .pronunciation ? "发音训练" : "内容训练") · \(row.attemptCount)次尝试 · \(resultLabel(row.final))").font(.caption).foregroundStyle(.secondary)
-                if let evidence = row.final.pronunciation { Text("可评估覆盖率 \(Int(evidence.coverage*100))%").font(.caption) }
-            } } }
+            rowsSection
         }.navigationTitle("训练报告").toolbar { Button("完成") { dismiss() } } }
+    }
+    private var summarySection: some View {
+        let unevaluated = report.count(.unevaluated) + report.count(.disputed)
+        let summary = "内容一致 \(report.count(.consistent)) · 待复习 \(report.count(.different)) · 跳过 \(report.count(.skipped)) · 未评估 / 争议 \(unevaluated)"
+        return Section("本次训练") {
+            Text("练习 \(report.rows.count) 句 · \(report.attempts) 次录音或重分析")
+            Text(summary)
+        }
+    }
+    private var pronunciationSection: some View {
+        let counts = report.pronunciationCounts
+        let colors = "绿 \(counts[.green, default: 0]) · 黄 \(counts[.yellow, default: 0]) · 红 \(counts[.red, default: 0]) · 灰 \(counts[.unknown, default: 0])"
+        let words: [WordAssessment] = report.rows.flatMap { $0.final.pronunciation?.words ?? [] }
+        let priorities = Array(words.filter { $0.status == .red || $0.status == .yellow }.prefix(3).enumerated())
+        return Section("发音声学证据") {
+            Text(colors)
+            Text("按各句本次最终结果统计；未获得发音结果的句子也会保留在明细中。颜色不表示发音正确概率。").font(.caption)
+            ForEach(priorities, id: \.offset) { item in
+                Text("重练：\(item.element.text) · \(item.element.status.label)").foregroundStyle(item.element.status.color)
+            }
+        }
+    }
+    private var rowsSection: some View {
+        Section("逐句结果") {
+            ForEach(report.rows) { row in
+                ReportSentenceRow(row: row, result: resultLabel(row.final))
+            }
+        }
     }
     private func resultLabel(_ value: Attempt) -> String {
         if value.mode == .pronunciation && value.result != .skipped { return value.pronunciation == nil ? "发音未评估" : "已生成声学证据" }
         switch value.result { case .consistent: return "内容一致"; case .different: return "待复习"; case .skipped: return "跳过"; case .unevaluated: return "未评估"; case .disputed: return "识别争议" }
+    }
+}
+
+@MainActor private struct ReportSentenceRow: View {
+    let row: ReportRow
+    let result: String
+    var body: some View {
+        let mode = row.final.mode == .pronunciation ? "发音训练" : "内容训练"
+        return VStack(alignment: .leading, spacing: 6) {
+            Text(row.final.text)
+            Text("\(mode) · \(row.attemptCount)次尝试 · \(result)").font(.caption).foregroundStyle(.secondary)
+            if let evidence = row.final.pronunciation {
+                Text("可评估覆盖率 \(Int(evidence.coverage*100))%").font(.caption)
+            }
+        }
     }
 }
