@@ -2,6 +2,7 @@
   "status": "PASS_STATIC_ONLY",
   "checks": [
     "375 staged model/VAD/G2P/license files: size and SHA256",
+    "Native dependency CMake files, configuration template and public headers exist",
     "Python resource/project/build verification scripts parse",
     "Xcode graph, targets, iOS 17 deployment and all Swift source references",
     "Generated project parses as OpenStep plist",

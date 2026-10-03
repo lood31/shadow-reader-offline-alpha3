@@ -23,6 +23,16 @@ def validate(resources_only=False, syntax=False):
     assert manifest["onnxruntime"] == "1.24.3"
     assert manifest["g2pVersion"] == "espeak-ng-1.52.0"
     assert manifest["evidenceVersion"] == "acoustic-evidence-v1"
+    for name in (
+        "third_party/whisper.cpp-1.9.4/CMakeLists.txt",
+        "third_party/whisper.cpp-1.9.4/include/whisper.h",
+        "third_party/espeak-ng-1.52.0/src/ucd-tools/CMakeLists.txt",
+        "third_party/espeak-ng-1.52.0/src/libespeak-ng/CMakeLists.txt",
+        "third_party/espeak-ng-1.52.0/src/libespeak-ng/config.h.in",
+        "third_party/espeak-ng-1.52.0/src/include/espeak-ng/speak_lib.h",
+    ):
+        assert (IOS.parent / name).is_file(), f"Missing native source/build input: {name}"
+    checks.append("Native dependency CMake files, configuration template and public headers exist")
     if not resources_only:
         for path in (IOS / "scripts").glob("*.py"):
             ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
