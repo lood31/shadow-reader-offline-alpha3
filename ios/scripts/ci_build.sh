@@ -7,7 +7,9 @@ xcodebuild -version
 xcrun --sdk iphoneos --show-sdk-version
 python3 scripts/validate.py --resources-only
 python3 scripts/test_resource_tools.py
-bash scripts/build_native.sh
+if [[ ! -f Native/Vendor/ShadowNativeDependencies.xcframework/Info.plist ]]; then
+    bash scripts/build_native.sh
+fi
 pod install
 # Preserve the real resolved dependency versions with the job artifacts.
 cp Podfile.lock .build/ci/Podfile.lock

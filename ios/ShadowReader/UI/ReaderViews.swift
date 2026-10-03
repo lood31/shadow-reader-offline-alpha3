@@ -3,7 +3,8 @@ import SwiftUI
 @MainActor struct ReaderRootView: View {
     @ObservedObject var controller: ReaderController
     @Environment(\.scenePhase) private var scenePhase
-    @State private var showImport = false, showSettings = false
+    @State private var showImport = false
+    @State private var showSettings = false
     @State private var shared: SharedImport?
     var body: some View {
         NavigationStack {
@@ -68,9 +69,12 @@ import SwiftUI
     @ObservedObject var controller: ReaderController
     var shared: SharedImport?
     @Environment(\.dismiss) private var dismiss
-    @State private var title = "", bodyText = "", link = ""
+    @State private var title = ""
+    @State private var bodyText = ""
+    @State private var link = ""
     @State private var preview: ImportedText?
-    @State private var loading = false, error = ""
+    @State private var loading = false
+    @State private var error = ""
     @State private var task: Task<Void, Never>?
     var body: some View {
         NavigationStack { Form {

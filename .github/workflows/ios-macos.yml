@@ -34,7 +34,30 @@ jobs:
           read -r tag asset < <(python3 -c 'import json; d=json.load(open("ios/Resources/ci-resource-bundle.json")); print(d["releaseTag"],d["assetName"])')
           gh release download "$tag" --pattern "$asset" --dir ios/.build/ci
           python3 ios/scripts/ci_resources.py restore "ios/.build/ci/$asset"
+      - name: Identify Apple toolchain
+        id: toolchain
+        shell: bash
+        run: |
+          echo "version=$(xcodebuild -version | tr '\n ' '--')-$(xcrun --sdk iphoneos --show-sdk-version)" >> "$GITHUB_OUTPUT"
+      - name: Restore exact native library cache
+        id: native-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ios/Native/Vendor/ShadowNativeDependencies.xcframework
+          key: native-ios-${{ runner.os }}-${{ runner.arch }}-${{ steps.toolchain.outputs.version }}-${{ hashFiles('ios/Native/Dependencies/**', 'ios/scripts/build_native.sh', 'third_party/espeak-ng-1.52.0/**', 'third_party/whisper.cpp-1.9.4/**') }}
+      - name: Compile native libraries
+        if: steps.native-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: bash ios/scripts/build_native.sh 2>&1 | tee ios/.build/ci/native-build.log
+      - name: Save successfully compiled native libraries
+        if: steps.native-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ios/Native/Vendor/ShadowNativeDependencies.xcframework
+          key: ${{ steps.native-cache.outputs.cache-primary-key }}
       - name: Build native libraries, unsigned iOS app, and run XCTest
+        # Native compilation is handled before this step so successful libraries
+        # are saved even if Swift compilation or XCTest subsequently fails.
         shell: bash
         run: bash ios/scripts/ci_build.sh 2>&1 | tee ios/.build/ci/pipeline.log
       - name: Upload build logs and test results
