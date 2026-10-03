@@ -34,6 +34,6 @@ simulator_id="$(xcrun simctl list devices available --json | python3 -c 'import 
 xcodebuild -workspace ShadowReader.xcworkspace -scheme ShadowReader \
     -configuration Debug -destination "platform=iOS Simulator,id=$simulator_id" \
     -parallel-testing-enabled NO -derivedDataPath .build/ci/simulator \
-    -resultBundlePath .build/ci/Tests.xcresult CODE_SIGNING_ALLOWED=NO test \
+    -resultBundlePath .build/ci/Tests.xcresult CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=YES test \
     2>&1 | tee .build/ci/simulator-test.log
 echo "Unsigned device compilation and simulator tests completed; physical-device acceptance is still pending."

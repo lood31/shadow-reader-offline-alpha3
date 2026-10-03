@@ -43,6 +43,7 @@ def configs(name, settings):
         values = dict(settings)
         values["SWIFT_OPTIMIZATION_LEVEL"] = "-Onone" if config == "Debug" else "-O"
         if config == "Debug":
+            values["ONLY_ACTIVE_ARCH"] = "YES"
             values["ENABLE_TESTABILITY"] = "YES"
             values["DEBUG_INFORMATION_FORMAT"] = "dwarf"
             values["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] = "DEBUG $(inherited)"

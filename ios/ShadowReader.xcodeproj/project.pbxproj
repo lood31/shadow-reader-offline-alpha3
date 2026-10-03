@@ -499,6 +499,7 @@
 				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks",);
 				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = ("$(inherited)", "$(SRCROOT)/Native", "$(SRCROOT)/Native/Vendor/ShadowNativeDependencies.xcframework/ios-arm64_x86_64-simulator/Headers",);
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"ONLY_ACTIVE_ARCH" = "YES";
 				"ENABLE_TESTABILITY" = "YES";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
@@ -579,6 +580,7 @@
 				"SKIP_INSTALL" = "YES";
 				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",);
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"ONLY_ACTIVE_ARCH" = "YES";
 				"ENABLE_TESTABILITY" = "YES";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
@@ -654,6 +656,7 @@
 				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/ShadowReader.app/ShadowReader";
 				"BUNDLE_LOADER" = "$(TEST_HOST)";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"ONLY_ACTIVE_ARCH" = "YES";
 				"ENABLE_TESTABILITY" = "YES";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
@@ -722,6 +725,7 @@
 				"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
 				"SDKROOT" = "iphoneos";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"ONLY_ACTIVE_ARCH" = "YES";
 				"ENABLE_TESTABILITY" = "YES";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
