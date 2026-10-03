@@ -94,7 +94,13 @@ final class CoreTests: XCTestCase {
         let completed = expectation(description: "Worker acknowledges cancellation after cleanup")
         DispatchQueue(label: "test.native.worker").async {
             started.signal(); released.wait()
-            XCTAssertThrowsError(try flag.check()); completed.fulfill()
+            do {
+                try flag.check()
+                XCTFail("Cancelled worker must throw")
+            } catch {
+                XCTAssertTrue(error is CancellationError)
+            }
+            completed.fulfill()
         }
         XCTAssertEqual(started.wait(timeout: .now()+1), .success); flag.cancel(); released.signal(); wait(for: [completed], timeout: 2)
     }

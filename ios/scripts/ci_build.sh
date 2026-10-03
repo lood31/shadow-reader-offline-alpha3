@@ -20,6 +20,7 @@ from pathlib import Path
 path = Path('ShadowReader.xcodeproj/xcshareddata/xcschemes/ShadowReader.xcscheme')
 tree = ET.parse(path)
 action = tree.getroot().find('TestAction')
+action.set('shouldUseLaunchSchemeArgsEnv', 'NO')
 variables = action.find('EnvironmentVariables')
 if variables is None:
     variables = ET.SubElement(action, 'EnvironmentVariables')
