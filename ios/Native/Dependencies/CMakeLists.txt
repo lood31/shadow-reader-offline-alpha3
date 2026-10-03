@@ -27,3 +27,5 @@ add_subdirectory("${ESPEAK_ROOT}/src/ucd-tools" ucd)
 add_subdirectory("${ESPEAK_ROOT}/src/libespeak-ng" espeak)
 target_include_directories(espeak-ng BEFORE PRIVATE "${ESPEAK_ROOT}/src/include/compat")
 target_compile_options(espeak-ng PRIVATE "-include" "${CMAKE_CURRENT_LIST_DIR}/apple_endian.h")
+# Simulator app containers exceed eSpeak's Unix default of 160 bytes.
+target_compile_definitions(espeak-ng PRIVATE N_PATH_HOME=1024)

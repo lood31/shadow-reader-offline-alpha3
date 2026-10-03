@@ -54,7 +54,8 @@ static void report(NSError **error, const std::exception &e) {
         if (!_env) _env = std::make_unique<Ort::Env>(ORT_LOGGING_LEVEL_WARNING, "ShadowReader");
         if (std::string(OrtGetApiBase()->GetVersionString()) != "1.24.3") throw std::runtime_error("ONNX Runtime 版本不匹配，需要1.24.3。");
         if (!_g2pReady) {
-            _g2pReady = espeak_Initialize(AUDIO_OUTPUT_SYNCHRONOUS, 0, path.UTF8String, 0) > 0 && espeak_SetVoiceByName("en-us") == EE_OK;
+            if (strlen(path.UTF8String) + sizeof("/espeak-ng-data") >= 1024) throw std::runtime_error("音素资源路径过长。");
+            _g2pReady = espeak_Initialize(AUDIO_OUTPUT_SYNCHRONOUS, 0, path.UTF8String, espeakINITIALIZE_DONT_EXIT) > 0 && espeak_SetVoiceByName("en-us") == EE_OK;
             if (!_g2pReady) throw std::runtime_error("英语音素资源初始化失败。");
         }
         Ort::SessionOptions options;

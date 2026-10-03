@@ -1,6 +1,6 @@
 # 影子阅读器 iPhone 客户端
 
-这是独立的 SwiftUI 开发工程，最低 iOS 17，优先 iPhone，iPad 使用兼容布局。当前交付为 Windows 上完成的源码与静态验证，**尚未经过 Xcode 类型检查、链接、模拟器运行或 iPhone 验收**。Android 实现未改动。
+这是独立的 SwiftUI 开发工程，最低 iOS 17，优先 iPhone，iPad 使用兼容布局。源码在 Windows 上准备，已通过 GitHub macOS 云端的真机架构无签名 Release 编译、模拟器 Debug 编译与链接。测试结果见 [云端验证记录](docs/cloud-validation.md)，iPhone 功能与性能验收仍待完成。Android 实现未改动。
 
 ## 已实现的源码范围
 
@@ -68,7 +68,7 @@ xcodebuild -workspace ShadowReader.xcworkspace -scheme ShadowReader \
   CODE_SIGNING_ALLOWED=NO test
 ```
 
-Swift 与 Objective-C++ 均未在本阶段编译，Mac 首次构建是下一道必需验收门槛；遇到编译、链接或 SDK 差异需先修复再记录通过。纯算法和存储测试默认运行。266 词原生 G2P 与取消恢复测试默认跳过：在 Xcode 的 Edit Scheme → Test → Arguments → Environment Variables 添加 `RUN_NATIVE_IOS_TESTS=1`，然后重跑测试；普通 Shell 环境变量不保证传到测试进程。
+Swift 与 Objective-C++ 已在云端编译，个人 Mac 的交互验收仍需按清单执行。纯算法和存储测试默认运行。266 词原生 G2P 与取消恢复测试在云端自动开启；手动运行 Xcode 时，在 Edit Scheme → Test → Arguments 中关闭继承 Run 的参数和环境，添加 `RUN_NATIVE_IOS_TESTS=1` 后重跑测试；普通 Shell 环境变量不保证传到测试进程。
 
 ## 签名及 Safari 分享
 
